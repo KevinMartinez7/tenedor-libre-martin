@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FlatpickrDirective } from '../../shared/directives/flatpickr.directive';
 
 @Component({
   selector: 'app-reservas',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FlatpickrDirective],
   templateUrl: './reservas.component.html',
   styleUrl: './reservas.component.scss',
 })

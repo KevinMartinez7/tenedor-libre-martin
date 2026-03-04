@@ -72,7 +72,17 @@
             <div class="form-row">
               <div class="form-group" [class.has-error]="isInvalid('fecha')">
                 <label for="fecha">Fecha *</label>
-                <input id="fecha" type="date" formControlName="fecha">
+                <input
+                  id="fecha"
+                  type="text"
+                  formControlName="fecha"
+                  appFlatpickr
+                  placeholder="Seleccioná una fecha"
+                  readonly
+                >
+                @if (isInvalid('fecha')) {
+                  <span class="form-error">Seleccioná una fecha</span>
+                }
               </div>
               <div class="form-group" [class.has-error]="isInvalid('horario')">
                 <label for="horario">Horario *</label>
