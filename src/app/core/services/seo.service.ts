@@ -27,7 +27,7 @@ export class SeoService {
         'Lo de Martín, restaurante de cocina de autor en Tandil, Buenos Aires. ' +
         'Reservas online, menú almuerzo y cena, catering y eventos. Las Heras 560, Tandil.',
       url: SITE_URL + '/',
-      image: SITE_URL + '/assets/img/hero-img.avif',
+      image: SITE_URL + '/assets/img/preview.jpg',
       imageAlt: 'Interior del restaurante Lo de Martín en Tandil',
       type: 'restaurant',
     });

@@ -18,19 +18,19 @@ export class HeroComponent implements OnInit, OnDestroy {
       image: 'assets/img/hall.avif',
       title: 'Una Mesa',
       titleItalic: 'para el placer',
-      subtitle: 'Delicias sin límite en un ambiente de lujo contemporáneo',
+      subtitle: 'Donde la buena cocina y el ambiente perfecto se encuentran.',
     },
     {
       image: 'assets/img/hero2.avif',
       title: 'Sabores',
       titleItalic: 'que perduran',
-      subtitle: 'Cocina de autor en formato libre, para vivir sin restricciones',
+      subtitle: 'Platos que conquistan desde el primer bocado.',
     },
     {
       image: 'assets/img/hero.avif',
-      title: 'El ritual',
-      titleItalic: 'del buen comer',
-      subtitle: 'Cada plato es una historia. Cada visita, un recuerdo',
+      title: 'El',
+      titleItalic: 'buen comer',
+      subtitle: 'Una experiencia pensada para disfrutar, compartir y volver.',
     },
   ];
 
