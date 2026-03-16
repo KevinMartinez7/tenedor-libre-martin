@@ -38,7 +38,7 @@ import { CommonModule } from '@angular/common';
                   </svg>
                 </a>
                 <a
-                  href="https://www.facebook.com/Lodemartinoficial1?locale=es_LA"
+                  href="https://www.facebook.com/lodemartintandil/?locale=es_LA"
                   target="_blank"
                   class="footer__social-link"
                   aria-label="Facebook"
@@ -79,10 +79,7 @@ import { CommonModule } from '@angular/common';
             <div class="footer__col" data-aos="fade-up" data-aos-delay="200">
               <h5 class="footer__col-title">Servicios</h5>
               <ul>
-                <li><a href="#">Tenedor libre</a></li>
                 <li><a href="#">Menú corporativo</a></li>
-                
-            
                 <li><a (click)="scrollTo('#reservas')">Reservas</a></li>
               </ul>
             </div>
@@ -96,20 +93,6 @@ import { CommonModule } from '@angular/common';
               </ul>
             </div>
           </div>
-
-          <!-- Map -->
-          <!-- <div class="footer__map" data-aos="fade-up" data-aos-delay="200">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12692.140711742251!2d-59.145739!3d-37.3179944!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911f85ad4ea001%3A0x13e054d12fef1237!2sLo%20de%20Mart%C3%ADn!5e0!3m2!1ses!2sar!4v1771554463120!5m2!1ses!2sar"
-              width="100%"
-              height="280"
-              style="border:0; display:block; border-radius: 16px;"
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Ubicación de Lo de Martín en Tandil, Buenos Aires"
-            ></iframe>
-          </div> -->
         </div>
       </div>
 
@@ -120,7 +103,7 @@ import { CommonModule } from '@angular/common';
             <a href="https://www.instagram.com/lodemartintandil/?hl=es" target="_blank"
               >Instagram</a
             >
-            <a href="https://www.facebook.com/lodemartintandil/?locale=es_LA" target="_blank"
+            <a href="https://www.facebook.com/Lodemartinoficial1?locale=es_LA" target="_blank"
               >Facebook</a
             >
           </div>

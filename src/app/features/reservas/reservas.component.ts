@@ -19,7 +19,7 @@ export class ReservasComponent {
   whatsappMessage = signal('');
 
   // Configuración de WhatsApp
-  readonly whatsappNumber = '5492254411966'/* '5492494210572' */; // Sin el símbolo + ni espacios
+  readonly whatsappNumber = '5492494210572'; // Sin el símbolo + ni espacios
 
   readonly personas = [
     '1-2 personas',
