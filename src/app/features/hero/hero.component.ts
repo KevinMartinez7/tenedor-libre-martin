@@ -61,6 +61,16 @@ export class HeroComponent implements OnInit, OnDestroy {
     next?.scrollIntoView({ behavior: 'smooth' });
   }
 
+  scrollToReservas() {
+    const reservas = document.querySelector('#reservas');
+    reservas?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  scrollToGaleria() {
+    const galeria = document.querySelector('#galeria');
+    galeria?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   goToSlide(i: number) {
     this.currentSlide.set(i);
   }
