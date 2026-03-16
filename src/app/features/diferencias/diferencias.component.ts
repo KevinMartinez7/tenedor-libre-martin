@@ -18,27 +18,27 @@ export class DiferenciasComponent {
     {
       icon: '🔄',
       title: 'Renovación Constante',
-      desc: 'Nuestro menú rota cada semana para que siempre tengas algo nuevo que descubrir.',
+      desc: 'Nuestro menú rota regularmente para que siempre tengas algo nuevo que descubrir.',
     },
     {
       icon: '🍷',
-      title: 'Sommelier a tu mesa',
-      desc: 'Maridaje personalizado con más de 80 etiquetas de vinos nacionales e importados.',
+      title: 'Variedad en bebidas',
+      desc: 'Ofrecemos una amplia selección de bebidas para acompañar tu experiencia gastronómica.',
     },
     {
       icon: '🎭',
-      title: 'Experiencias Privadas',
-      desc: 'Salones exclusivos para eventos corporativos, cumpleaños y celebraciones especiales.',
+      title: 'Experiencias Únicas',
+      desc: 'Vive momentos inolvidables con nuestra gastronomía única y variada.',
     },
     {
       icon: '🌱',
-      title: 'Compromiso sustentable',
-      desc: 'Reducción de residuos, productos locales y packaging biodegradable.',
+      title: 'Compromiso con la atención',
+      desc: 'En Lo De Martin siempre tenes atención personalizada y dedicada.',
     },
     {
       icon: '👶',
-      title: 'Menú infantil premium',
-      desc: 'Opciones pensadas para los más pequeños. La magia también es para ellos.',
+      title: 'Tenemos en cuenta a todos',
+      desc: 'Ofrecemos opciones y atención especial para los más pequeños de la familia.',
     },
   ];
 }

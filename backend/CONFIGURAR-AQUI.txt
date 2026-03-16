@@ -1,0 +1,79 @@
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   ⚠️  CONFIGURACIÓN REQUERIDA - TWILIO AUTH TOKEN          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+📌 ESTADO ACTUAL:
+   ✅ Backend corriendo en: http://localhost:3000
+   ✅ Frontend corriendo en: http://localhost:4200
+   ❌ Falta configurar: TWILIO_AUTH_TOKEN
+
+🔐 CÓMO OBTENER TU AUTH TOKEN:
+
+   1. Ve a: https://console.twilio.com/
+   
+   2. Inicia sesión con tu cuenta
+   
+   3. En el dashboard verás tu "Account Info":
+      ┌─────────────────────────────────────┐
+      │ Account SID                         │
+      │ AC6acee0b2a08eaef93eda43fe1128c641 │ ✅ Ya lo tenés
+      │                                     │
+      │ Auth Token                          │
+      │ ••••••••••••••••••  👁️ Show        │ 👈 Clic aquí
+      └─────────────────────────────────────┘
+   
+   4. Haz clic en "Show" o el ícono del ojo 👁️
+   
+   5. Copia el Auth Token (tiene ~32 caracteres)
+
+✏️  CÓMO CONFIGURARLO:
+
+   1. Abre el archivo: backend\.env
+   
+   2. Busca esta línea:
+      TWILIO_AUTH_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   
+   3. Reemplaza las X con tu Auth Token real:
+      TWILIO_AUTH_TOKEN=tu_token_real_aqui_sin_espacios
+   
+   4. Guarda el archivo (Ctrl + S)
+   
+   5. El backend se reiniciará automáticamente
+
+🧪 CÓMO PROBAR:
+
+   1. Ve a: http://localhost:4200
+   
+   2. Navega a la sección "Reservas"
+   
+   3. Completa el formulario:
+      • Nombre: Tu nombre
+      • Email: tu@email.com
+      • Teléfono: +54 9 11 1234-5678
+      • Fecha: Selecciona una fecha
+      • Horario: Elige un horario
+      • Personas: Selecciona cantidad
+   
+   4. Haz clic en "Confirmar Reserva"
+   
+   5. ¡Verifica tu WhatsApp! (+54 249 421-0572)
+
+🔒 SEGURIDAD:
+
+   • El archivo .env NO se sube a Git (está en .gitignore)
+   • Nunca compartas tu Auth Token públicamente
+   • Si tu token se compromete, resetéalo en Twilio Console
+
+❓ ¿PROBLEMAS?
+
+   • Si no tienes cuenta en Twilio: https://www.twilio.com/try-twilio
+   • Si el sandbox de WhatsApp no funciona, verifica que hayas:
+     ✓ Enviado el código de activación al número de Twilio
+     ✓ Configurado tu número destino correctamente
+
+📞 El mensaje llegará a: +54 249 421-0572
+
+---
+Última actualización: 12/03/2026

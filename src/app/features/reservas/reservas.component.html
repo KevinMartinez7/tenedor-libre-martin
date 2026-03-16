@@ -7,18 +7,18 @@
       <div class="reservas__info" data-aos="fade-right" data-aos-duration="1000">
         <p class="section-label">Reservas</p>
         <h2 class="section-title reservas__title">
-          Asegura tu mesa esta noche
+          Asegura tu mesa
         </h2>
         <p class="section-subtitle reservas__desc">
-          Cumpleaños, aniversarios, reuniones de negocios o simplemente una noche especial.
-          Reserva en minutos y llega a disfrutar.
+          Cumpleaños, aniversarios, reuniones de negocios o simplemente un momento especial.
+          Reserva en segundos y llega a disfrutar.
         </p>
 
         <ul class="reservas__perks">
-          <li><span class="reservas__perk-icon">✓</span> Confirmación inmediata por email</li>
-          <li><span class="reservas__perk-icon">✓</span> Cancelación sin cargo hasta 24hs antes</li>
-          <li><span class="reservas__perk-icon">✓</span> Opciones para celíacos y veganos</li>
-          <li><span class="reservas__perk-icon">✓</span> Decoración especial para celebraciones</li>
+          <li><span class="reservas__perk-icon">✓</span> Confirmación inmediata por WhatsApp</li>
+          <li><span class="reservas__perk-icon">✓</span> Tolerancia de reserva hasta las 21:15</li>
+          <li><span class="reservas__perk-icon">✓</span> Las reservas para cena solo se pueden hacer entre 20:00 y 21:15</li>
+          <li><span class="reservas__perk-icon">✓</span> Las reservas para el almuerzo solo se pueden hacer entre 12:00 y 13:30</li>
         </ul>
 
         <div class="reservas__contact">
@@ -33,6 +33,13 @@
 
         @if (!submitted()) {
           <form class="reservas__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            
+            @if (error()) {
+              <div class="reservas__error">
+                ⚠️ {{ error() }}
+              </div>
+            }
+
             <div class="form-row">
               <div class="form-group" [class.has-error]="isInvalid('nombre')">
                 <label for="nombre">Nombre completo *</label>
@@ -58,18 +65,6 @@
                   <span class="form-error">Teléfono inválido</span>
                 }
               </div>
-              <div class="form-group" [class.has-error]="isInvalid('personas')">
-                <label for="personas">Personas *</label>
-                <select id="personas" formControlName="personas">
-                  <option value="" disabled>Seleccionar</option>
-                  @for (p of personas; track p) {
-                    <option [value]="p">{{ p }}</option>
-                  }
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
               <div class="form-group" [class.has-error]="isInvalid('fecha')">
                 <label for="fecha">Fecha *</label>
                 <input
@@ -84,14 +79,45 @@
                   <span class="form-error">Seleccioná una fecha</span>
                 }
               </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" [class.has-error]="isInvalid('turno')">
+                <label for="turno">Turno *</label>
+                <select id="turno" formControlName="turno">
+                  <option value="" disabled>Seleccionar turno</option>
+                  <option value="almuerzo">🍽️ Almuerzo</option>
+                  <option value="cena">🌙 Cena</option>
+                </select>
+                @if (isInvalid('turno')) {
+                  <span class="form-error">Seleccioná un turno</span>
+                }
+              </div>
+              <div class="form-group" [class.has-error]="isInvalid('personas')">
+                <label for="personas">Personas *</label>
+                <select id="personas" formControlName="personas">
+                  <option value="" disabled>Seleccionar</option>
+                  @for (p of personas; track p) {
+                    <option [value]="p">{{ p }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row form-row--single">
               <div class="form-group" [class.has-error]="isInvalid('horario')">
                 <label for="horario">Horario *</label>
-                <select id="horario" formControlName="horario">
-                  <option value="" disabled>Seleccionar</option>
-                  @for (h of horarios; track h) {
+                <select id="horario" formControlName="horario" [disabled]="!form.value.turno">
+                  <option value="" disabled>
+                    {{ form.value.turno ? 'Seleccionar horario' : 'Primero elegí un turno' }}
+                  </option>
+                  @for (h of horariosDisponibles(); track h) {
                     <option [value]="h">{{ h }}</option>
                   }
                 </select>
+                @if (isInvalid('horario')) {
+                  <span class="form-error">Seleccioná un horario</span>
+                }
               </div>
             </div>
 
@@ -113,12 +139,54 @@
         } @else {
           <div class="reservas__success">
             <div class="reservas__success-icon">🎉</div>
-            <h3>¡Reserva confirmada!</h3>
-            <p>Te enviamos un email de confirmación. ¡Te esperamos con la mesa lista!</p>
+            <h3>¡Reserva enviada!</h3>
+            <p>Hemos abierto WhatsApp con tu reserva. Asegúrate de enviarla para que podamos confirmarla.</p>
             <button class="btn-primary" (click)="reset()">Hacer otra reserva</button>
           </div>
         }
       </div>
     </div>
   </div>
+
+  <!-- Modal de Confirmación WhatsApp -->
+  @if (showModal()) {
+    <div class="modal-overlay" (click)="cancelarModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <div class="modal-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </div>
+          <h3>Reserva via WhatsApp</h3>
+        </div>
+        
+        <div class="modal-body">
+          <p class="modal-message">
+            <strong>¡ATENCIÓN!</strong><br>
+            Se abrirá <strong>WhatsApp</strong> con tu reserva prellenada. Envía el mensaje desde el chat para confirmar.
+          </p>
+          
+          <div class="modal-preview">
+            <p class="modal-preview-label">Vista previa del mensaje:</p>
+            <div class="modal-preview-content">
+              {{ whatsappMessage() }}
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="modal-btn modal-btn--secondary" (click)="cancelarModal()">
+            Cancelar
+          </button>
+          <button type="button" class="modal-btn modal-btn--primary" (click)="confirmarWhatsApp()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            Abrir WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  }
 </section>

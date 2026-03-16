@@ -28,8 +28,8 @@ export class HeroComponent implements OnInit, OnDestroy {
     },
     {
       image: 'assets/img/hero.avif',
-      title: 'El',
-      titleItalic: 'buen comer',
+      title: 'El buen comer',
+      titleItalic: '',
       subtitle: 'Una experiencia pensada para disfrutar, compartir y volver.',
     },
   ];

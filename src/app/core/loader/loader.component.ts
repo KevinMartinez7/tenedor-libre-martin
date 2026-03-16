@@ -13,9 +13,9 @@ import { loaderOut } from '../../shared/animations';
         <div class="loader__inner">
           <div class="loader__fork">
             <img
-              src="assets/icons/martin_logo.svg"
+              src="assets/icons/martin_logo2.svg"
               alt="Logo de Tenedor Libre Premium"
-              class="h-16"
+              class="loader__logo"
             />
           </div>
           <div class="loader__bar">
@@ -50,6 +50,11 @@ import { loaderOut } from '../../shared/animations';
         &__fork {
           font-size: 3rem;
           animation: pulse 1.2s ease-in-out infinite;
+        }
+
+        &__logo {
+          height: 120px;
+          width: auto;
         }
 
         &__bar {

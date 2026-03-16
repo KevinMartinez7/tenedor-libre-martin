@@ -17,9 +17,9 @@ $color-glass:      rgba(8, 32, 94, 0.45);
 // -- Gradients --
 $gradient-hero:    linear-gradient(135deg, rgba(#080f1e,0.92) 0%, rgba(#08205e,0.75) 50%, rgba(#db3445,0.35) 100%);
 $gradient-overlay: linear-gradient(180deg, rgba(#080f1e,0.2) 0%, rgba(#080f1e,0.95) 100%);
-$gradient-brand:   linear-gradient(135deg, $color-blue 0%, $color-red 100%);
+$gradient-brand:   linear-gradient(145deg, rgba(#08205e,0.6), rgba(#080f1e,0.9));
 $gradient-card:    linear-gradient(145deg, rgba(#08205e,0.6), rgba(#080f1e,0.9));
-$gradient-section: linear-gradient(180deg, $color-dark 0%, $color-dark-2 50%, $color-dark 100%);
+$gradient-section: linear-gradient(180deg, $color-dark 91%, $color-dark-2 50%, $color-dark 100%);
 
 // -- Typography --
 $font-display: 'Playfair Display', Georgia, serif;

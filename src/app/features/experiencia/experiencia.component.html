@@ -6,14 +6,21 @@
       <!-- Left: Image -->
       <div class="experiencia__image-wrap" data-aos="fade-right" data-aos-duration="1000">
         <div class="experiencia__image-frame">
-          <img
-            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=900&q=85&auto=format&fit=crop"
-            alt="Chef preparando plato premium"
+          <video
             class="experiencia__image"
-            loading="lazy"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            disablePictureInPicture
+            [muted]="true"
           >
+            <source src="assets/videos/video.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+          </video>
           <div class="experiencia__image-badge">
-            <span class="badge-number">15</span>
+            <span class="badge-number">+25</span>
             <span class="badge-text">años de excelencia</span>
           </div>
         </div>
@@ -23,11 +30,11 @@
       <div class="experiencia__content">
         <p class="section-label" data-aos="fade-up">La Experiencia</p>
         <h2 class="section-title experiencia__title" data-aos="fade-up" data-aos-delay="100">
-          No es una simple cena.
+          No es una simple comida.
           <em>Es un ritual.</em>
         </h2>
         <p class="section-subtitle experiencia__desc" data-aos="fade-up" data-aos-delay="200">
-          En Tenedor Libre Premium reimaginamos el concepto de comer bien.
+          En el Tenedor Libre Lo De Martin reimaginamos el concepto de comer bien.
           Cada mesa es un teatro de sabores, cada visita una experiencia sensorial
           diseñada para quedar grabada en tu memoria.
         </p>

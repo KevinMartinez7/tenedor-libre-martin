@@ -29,7 +29,24 @@
           [attr.data-aos-delay]="(i % 4) * 200"
           (click)="openModal(item)"
         >
-          <img [src]="item.image" [alt]="item.category" loading="lazy" class="galeria__item-img">
+          @if (item.type === 'video') {
+            <video 
+              [src]="item.image" 
+              class="galeria__item-img" 
+              muted 
+              loop 
+              playsinline
+              (mouseenter)="onVideoHover($event, true)"
+              (mouseleave)="onVideoHover($event, false)"
+            ></video>
+            <div class="galeria__item-video-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          } @else {
+            <img [src]="item.image" [alt]="item.category" loading="lazy" class="galeria__item-img">
+          }
           <div class="galeria__item-overlay">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"/>
@@ -52,7 +69,11 @@
             <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
           </svg>
         </button>
-        <img [src]="selectedItem()!.image" [alt]="selectedItem()!.category" class="galeria__modal-img">
+        @if (selectedItem()!.type === 'video') {
+          <video [src]="selectedItem()!.image" class="galeria__modal-img" controls autoplay loop></video>
+        } @else {
+          <img [src]="selectedItem()!.image" [alt]="selectedItem()!.category" class="galeria__modal-img">
+        }
       </div>
     </div>
   }
