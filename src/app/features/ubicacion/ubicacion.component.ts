@@ -37,7 +37,7 @@ import { CommonModule } from '@angular/common';
               <span class="ubicacion__detail-icon">🕐</span>
               <div>
                 <h4>Horarios</h4>
-                <p>Lunes a domingo<br />Mediodía: 12:00 – 15:00<br />Noche: 20:30 – 00:00</p>
+                <p>Martes a domingo<br />Mediodía: 12:00 – 15:00<br />Noche: 20:30 – 00:00</p>
               </div>
             </div>
             <div class="ubicacion__detail">
