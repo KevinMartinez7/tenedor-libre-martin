@@ -72,7 +72,7 @@ export class ReservasComponent {
   constructor() {
     this.form = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.email]],
       telefono: ['', [Validators.required, Validators.pattern(/^\+?[\d\s\-()]{8,}$/)]],
       fecha: ['', Validators.required],
       turno: ['', Validators.required],
@@ -152,22 +152,22 @@ export class ReservasComponent {
 
   generarMensajeWhatsApp(): string {
     const data = this.form.value;
-    const turnoTexto = data.turno === 'almuerzo' ? '🍽️ Almuerzo' : '🌙 Cena';
+    const turnoTexto = data.turno === 'almuerzo' ? 'Almuerzo' : 'Cena';
     
-    let mensaje = `🍽️ *Solicitud de Reserva - Lo de Martín*\n\n`;
-    mensaje += `👤 *Nombre:* ${data.nombre}\n`;
-    mensaje += `📅 *Fecha:* ${data.fecha}\n`;
-    mensaje += `⏰ *Turno:* ${turnoTexto}\n`;
-    mensaje += `🕐 *Horario:* ${data.horario}\n`;
-    mensaje += `👥 *Personas:* ${data.personas}\n`;
-    mensaje += `📧 *Email:* ${data.email}\n`;
-    mensaje += `📱 *Teléfono:* ${data.telefono}\n`;
+    let mensaje = `*Solicitud de Reserva - Lo de Martín*\n\n`;
+    mensaje += `• *Nombre:* ${data.nombre}\n`;
+    mensaje += `• *Fecha:* ${data.fecha}\n`;
+    mensaje += `• *Turno:* ${turnoTexto}\n`;
+    mensaje += `• *Horario:* ${data.horario}\n`;
+    mensaje += `• *Personas:* ${data.personas}\n`;
+    mensaje += `• *Email:* ${data.email}\n`;
+    mensaje += `• *Teléfono:* ${data.telefono}\n`;
     
     if (data.comentarios) {
-      mensaje += `\n💬 *Comentarios:* ${data.comentarios}\n`;
+      mensaje += `\n*Comentarios:* ${data.comentarios}\n`;
     }
     
-    mensaje += `\n¡Espero su confirmación! 😊`;
+    mensaje += `\n¡Espero su confirmación!`;
     return mensaje;
   }
 

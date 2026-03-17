@@ -90,13 +90,17 @@
     font-family: $font-display;
     font-size: clamp(3rem, 8vw, 6.5rem);
     font-weight: 700;
-    line-height: 1;
+    line-height: 0.95;
     color: $color-white;
     margin-bottom: 1.25rem;
+    overflow: visible;
 
-    &-regular { display: block; }
+    &-regular { 
+      display: block;
+    }
     &-italic {
       font-style: italic;
+      display: block;
       @include gradient-text(linear-gradient(135deg, $color-white 0%, rgba($color-red,0.9) 100%));
     }
   }

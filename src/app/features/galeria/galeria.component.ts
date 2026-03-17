@@ -84,10 +84,20 @@ export class GaleriaComponent {
     { id: 55, category: 'Parrilla', image: `${BASE}/parrilla/parrilla6.mov`, type: 'video' },
     { id: 56, category: 'Parrilla', image: `${BASE}/parrilla/parrilla7.png` },
     { id: 57, category: 'Pastas', image: `${BASE}/pastas/pasta1.jpeg` },
- /*    { id: 58, category: 'Pastas', image: `${BASE}/pastas/pasta2.jpg` },
-    { id: 59, category: 'Pastas', image: `${BASE}/pastas/pasta3.jpg` }, */
+    { id: 58, category: 'Pastas', image: `${BASE}/pastas/pasta2.jpeg` },
+    { id: 59, category: 'Pastas', image: `${BASE}/pastas/pasta3.jpeg` },
     { id: 60, category: 'Principales', image: `${BASE}/principales/principales13.jpeg` },
     { id: 61, category: 'Sushi', image: `${BASE}/sushi/sushi11.jpg` },
+    { id: 62, category: 'Pastas', image: `${BASE}/pastas/pasta4.jpeg` },
+    { id: 63, category: 'Sushi', image: `${BASE}/sushi/sushi12.jpg` },
+    { id: 64, category: 'Sushi', image: `${BASE}/sushi/sushi13.jpg` },
+    { id: 65, category: 'Sushi', image: `${BASE}/sushi/sushi14.jpg` },
+    { id: 66, category: 'Sushi', image: `${BASE}/sushi/sushi15.jpg` },
+    { id: 67, category: 'Entradas', image: `${BASE}/entrada/entrada14.jpg` },
+    { id: 68, category: 'Entradas', image: `${BASE}/entrada/entrada15.jpg` },
+    { id: 69, category: 'Entradas', image: `${BASE}/entrada/entrada16.jpg` },
+    { id: 70, category: 'Postres', image: `${BASE}/postres/postre15.jpg` },
+    { id: 71, category: 'Principales', image: `${BASE}/principales/principales13.jpg` },
 
   ];
 

@@ -22,7 +22,7 @@ export class SeoService {
   /** Call once at app bootstrap with the default landing-page values */
   setDefault(): void {
     this.set({
-      title: 'Lo de Martín — Restaurante en Tandil | Cocina de Autor',
+      title: 'Lo de Martín — Tenedor Libre en Tandil | Cocina de Autor',
       description:
         'Lo de Martín, restaurante de cocina de autor en Tandil, Buenos Aires. ' +
         'Reservas online, menú almuerzo y cena, catering y eventos. Las Heras 560, Tandil.',

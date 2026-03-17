@@ -84,7 +84,11 @@
   // Content
   &__title {
     margin: 0.75rem 0 1.25rem;
-    em { font-style: italic; @include gradient-text($gradient-brand); }
+    em { 
+      font-style: italic; 
+      color: $color-white;
+      text-shadow: 0 2px 20px rgba($color-red, 0.6);
+    }
   }
 
   &__desc { margin-bottom: 2.5rem; }
