@@ -89,7 +89,7 @@ import { CommonModule } from '@angular/common';
               <ul class="footer__contact-list">
                 <li>📍 Las Heras 560, Tandil, Buenos Aires</li>
                 <li>📞 +54 249 421-0572</li>
-                <li>🕐 Lun-Dom 12:00–15:00 / 20:30–00:00</li>
+                <li>🕐 Mar-Dom 12:00–15:00 / 20:30–00:00</li>
               </ul>
             </div>
           </div>
